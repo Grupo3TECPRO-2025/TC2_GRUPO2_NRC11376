@@ -27,6 +27,7 @@ public class Inter extends JFrame implements ActionListener {
 	private JTextField txtRadio;
 	private JTextField txtAltura;
 	private JTextArea txtS;
+	private JButton btnPrueba;
 
 	/**
 	 * Launch the application.
@@ -92,9 +93,18 @@ public class Inter extends JFrame implements ActionListener {
 			txtAltura.setBounds(108, 92, 96, 19);
 			contentPane.add(txtAltura);
 		}
+		{
+			btnPrueba = new JButton("PRUEBA");
+			btnPrueba.addActionListener(this);
+			btnPrueba.setBounds(369, 142, 161, 53);
+			contentPane.add(btnPrueba);
+		}
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnPrueba) {
+			do_btnPrueba_actionPerformed(e);
+		}
 		if (e.getSource() == btnNewButton) {
 			do_btnNewButton_actionPerformed(e);
 		}
@@ -106,5 +116,8 @@ public class Inter extends JFrame implements ActionListener {
 		Cilindro ci=new Cilindro(radio,altura);
 		
 		txtS.append("El volumen del cilindro es: "+ci.Volumen(radio, altura));
+	}
+	protected void do_btnPrueba_actionPerformed(ActionEvent e) {
+		
 	}
 }
